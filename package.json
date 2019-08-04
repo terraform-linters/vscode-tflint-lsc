@@ -10,13 +10,15 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onLanguage:terraform"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"commands": [{
-			"command": "extension.helloWorld",
-			"title": "Hello World"
+		"languages": [{
+			"id": "terraform",
+			"extensions": [
+				".tf"
+			]
 		}]
 	},
 	"scripts": {
@@ -35,6 +37,7 @@
 		"mocha": "^6.1.4",
 		"typescript": "^3.3.1",
 		"tslint": "^5.12.1",
-		"vscode-test": "^1.0.0-next.0"
+		"vscode-test": "^1.0.0-next.0",
+		"vscode-languageclient": "^5.2.1"
 	}
 }
