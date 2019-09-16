@@ -17,7 +17,8 @@
 		"languages": [{
 			"id": "terraform",
 			"extensions": [
-				".tf"
+				".tf",
+				".tfvars"
 			]
 		}]
 	},
