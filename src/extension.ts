@@ -17,6 +17,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 	const clientOptions: LanguageClientOptions = {
 		documentSelector: ['terraform'],
+		synchronize: {
+			fileEvents: vscode.workspace.createFileSystemWatcher('**/*.{tf,tfvars,hcl,json,tpl}')
+		}
 	};
 
 	const disposable = new LanguageClient("TFLint", serverOptions, clientOptions).start()
