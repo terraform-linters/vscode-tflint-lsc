@@ -1,8 +1,14 @@
 {
 	"name": "tflint-lsc",
+	"publisher": "tflint",
 	"displayName": "tflint-lsc",
 	"description": "A language server client for TFLint",
+	"license": "MPL-2.0",
 	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/terraform-linters/vscode-tflint-lsc"
+	},
 	"engines": {
 		"vscode": "^1.36.0"
 	},
@@ -14,16 +20,19 @@
 	],
 	"main": "./out/extension.js",
 	"contributes": {
-		"languages": [{
-			"id": "terraform",
-			"extensions": [
-				".tf",
-				".tfvars"
-			]
-		}]
+		"languages": [
+			{
+				"id": "terraform",
+				"extensions": [
+					".tf",
+					".tfvars"
+				]
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "yarn run compile",
+		"vscode:package": "vsce package --yarn --out out/",
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",
 		"pretest": "yarn run compile",
@@ -36,9 +45,11 @@
 		"@types/vscode": "^1.36.0",
 		"glob": "^7.1.4",
 		"mocha": "^6.1.4",
-		"typescript": "^3.3.1",
 		"tslint": "^5.12.1",
+		"typescript": "^3.3.1",
+		"vsce": "^1.75.0",
+		"vscode-languageclient": "^5.2.1",
 		"vscode-test": "^1.0.0-next.0",
-		"vscode-languageclient": "^5.2.1"
+		"yarn": "^1.22.4"
 	}
 }
